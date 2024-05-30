@@ -1,0 +1,49 @@
+@ = decorator
+
+jinja = logik i html med Flask (https://jinja.palletsprojects.com/en/3.0.x/)
+pip install flask-sqlalchemy (https://www.sqlalchemy.org/)
+
+
+------------------------------------
+Flask mappstruktur
+------------------------------------
+<ROOT>
+app.py
+* templates
+    HTML templates
+* static
+    ** css
+        css
+    ** js
+        javascript
+
+------------------------------------
+DATABAS
+------------------------------------
+starta en python tolk
+from app import db
+db.create_all()
+
+getbootstrap.com
+------------------------------------
+PIP
+------------------------------------
+1. pip install — user virtualenv3
+2. skapa en katalog som ska innehålla den virtuella miljön OFTAST "venv" i roten på ditt projekt
+GLÖM INTE SKAPA EN .gitignore med "venv" ".vscode" så att det inte synkas till git.
+3. virtualenv3 <katalogen> / eller cd <katalogen> sen virtualenv3
+4. för att aktivera använd /bin/activate.bat eller vilken ändelse som krävs för OS
+5. deactive för att deaktivera
+
+
+pip freeze > requirements.txt (SKAPAR EN REQUIRMENTS FIL)
+pip install -r requirements.txt (INSTALLERAR DET SOM FINNS I REQ FILEN)
+ip list --outdated (LISTAR REQ SOM ÄR OUT OF DATE)
+pip install -U PackageName (INSTALLERAR EN NYARE VERSION AV PAK)
+pip install -U -r requirements.txt (UPPGRADERAR SAMTLIGA REQ, GLÖM INTE KÖRA EN FREEZE FÖR ATT UPPDATERA REQ)
+------------------------------------
+VENV
+------------------------------------
+python -m venv /path/to/new/virtual/environment (SKAPAR EN MILJÖ)
+source venv/bin/activate (AKTIVERAR MILJÖN)
+deactivate (DEAKTIVERAR MILJÖN)
