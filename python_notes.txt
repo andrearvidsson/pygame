@@ -1,22 +1,5 @@
 @ = decorator
 
-jinja = logik i html med Flask (https://jinja.palletsprojects.com/en/3.0.x/)
-pip install flask-sqlalchemy (https://www.sqlalchemy.org/)
-
-
-------------------------------------
-Flask mappstruktur
-------------------------------------
-<ROOT>
-app.py
-* templates
-    HTML templates
-* static
-    ** css
-        css
-    ** js
-        javascript
-
 ------------------------------------
 DATABAS
 ------------------------------------
