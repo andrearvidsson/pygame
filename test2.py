@@ -5,7 +5,7 @@ import sys
 pygame.init()
 
 # Set the dimensions of the window
-window_size = (500, 500)
+window_size = (800, 800)
 screen = pygame.display.set_mode(window_size)
 pygame.display.set_caption('Pygame Window')
 
