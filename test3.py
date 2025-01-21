@@ -4,47 +4,47 @@ import pygame
 pygame.init()
 
 # Skapa fönster
-skärm_bredd, skärm_höjd = 800, 600
-skärm = pygame.display.set_mode((skärm_bredd, skärm_höjd))
+screen_width, screen_height = 800, 600
+screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Test3.py")
 
 # Definiera fyrkantens startposition och storlek
-fyrkant_x, fyrkant_y = 400, 300
-fyrkant_storlek = 30
-hastighet = 5
+square_x, square_y = 400, 300
+square_size = 30
+speed = 5
 
 # Färger
-VIT = (255, 255, 255)
-BLÅ = (0, 0, 255)
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
 
 # Spelloop
-kör = True
-while kör:
+running = True
+while running:
     # Hantera händelser
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            kör = False
+            running = False
 
     # Hantera tangenttryckningar
-    tangenter = pygame.key.get_pressed()
-    if tangenter[pygame.K_LEFT]:
-        fyrkant_x -= hastighet
-    if tangenter[pygame.K_RIGHT]:
-        fyrkant_x += hastighet
-    if tangenter[pygame.K_UP]:
-        fyrkant_y -= hastighet
-    if tangenter[pygame.K_DOWN]:
-        fyrkant_y += hastighet
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        square_x -= speed
+    if keys[pygame.K_RIGHT]:
+        square_x += speed
+    if keys[pygame.K_UP]:
+        square_y -= speed
+    if keys[pygame.K_DOWN]:
+        square_y += speed
 
     # Håll fyrkanten inom fönstrets gränser
-    fyrkant_x = max(0, min(skärm_bredd - fyrkant_storlek, fyrkant_x))
-    fyrkant_y = max(0, min(skärm_höjd - fyrkant_storlek, fyrkant_y))
+    square_x = max(0, min(screen_width - square_size, square_x))
+    square_y = max(0, min(screen_height - square_size, square_y))
 
     # Rensa skärmen
-    skärm.fill(VIT)
+    screen.fill(WHITE)
 
     # Rita fyrkanten
-    pygame.draw.rect(skärm, BLÅ, (fyrkant_x, fyrkant_y, fyrkant_storlek, fyrkant_storlek))
+    pygame.draw.rect(screen, BLUE, (square_x, square_y, square_size, square_size))
 
     # Uppdatera skärmen
     pygame.display.flip()
